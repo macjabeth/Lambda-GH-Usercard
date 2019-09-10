@@ -1,59 +1,44 @@
-# Github User Cards
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In this project we are going to be accessing the GitHub API and building a social card based on the data we get back. The goal is to create a component based on the data we get when we send a GET request to the GitHub API (requesting your own data at first). The CSS and the base HTML is already done for you, you simply need to create the component function and connect the pieces.
+## Available Scripts
 
-### Need to know:
-* JavaScript:
-  * Creating DOM components with Javascript Functions.
-  * Utilizing 3rd party libraries (axios)
-  * Promises, .then & .catch
-  * HTTP GET requests
-  * Array Methods
-* DOM
-  * Element selection
-  * Basic DOM manipulation
-  * Events and event listeners
+In the project directory, you can run:
 
-## Set Up The Project With Git
+### `npm start`
 
-**Follow these steps to set up and work on your project:**
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-* [ ] Create a forked copy of this project.
-* [ ] Add your project manager as collaborator on Github.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-**Follow these steps for completing your project.**
+### `npm test`
 
-* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-* [ ] Add your project manager as a reviewer on the pull-request
-* [ ] Your project manager will count the project as complete by merging the branch back into master.
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Preprocessor Setup
+### `npm run build`
 
-  * None. We have gone ahead and taken care of this step for you. Focus on the Javascript 😁.
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Part 1: Requesting Data from the GitHub API
-* Include the script element linking the `axios` library in your HTML. If you do not remember the code you can find it here: https://github.com/axios/axios
-* Follow the instructions found in the GitHubCard/index.js file to request data from the GitHub API.
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-### Part 2: Create the component function
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* Once you are receiving data from the GitHub API, take some time to study the data and the information it is giving you. You will create the HTML template you see in the GitHubCard/index.js file and plugging in the dynamic data you are getting from the GitHub API.
-* Once you complete the component, create a component based on your profile and add it to the DOM.
+### `npm run eject`
 
-### Part 3: Your Friends
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-* After you have successfully added your own card to the DOM, we will get a list of your followers and programmatically add cards for them as well. Follow the instructions in GitHubCard/index.js. 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Stretch Goals:
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-* Instead of manually creating a list of followers, do it programmatically. Create a function that requests the followers data from the API after it has received your data and create a card for each of your followers. Hint: you can chain promises.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-* Look into adding more info as an expanding card. You will need to create some new CSS and a button that expands and contracts the card. 
+## Learn More
 
-* Look into adding your GitHub contribution graph. There are a number of different ways of doing this, this Stack Overflow discussion will get you started: https://stackoverflow.com/questions/34516592/embed-github-contributions-graph-in-website
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
+To learn React, check out the [React documentation](https://reactjs.org/).
