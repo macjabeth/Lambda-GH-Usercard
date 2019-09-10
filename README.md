@@ -1,59 +1,78 @@
-# Github User Cards
+# Module Project: Component Lifecycle Methods - React Github User Card
 
-In this project we are going to be accessing the GitHub API and building a social card based on the data we get back. The goal is to create a component based on the data we get when we send a GET request to the GitHub API (requesting your own data at first). The CSS and the base HTML is already done for you, you simply need to create the component function and connect the pieces.
+This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by recreating the Github User Card project, but as a React application this time.
 
-### Need to know:
-* JavaScript:
-  * Creating DOM components with Javascript Functions.
-  * Utilizing 3rd party libraries (axios)
-  * Promises, .then & .catch
-  * HTTP GET requests
-  * Array Methods
-* DOM
-  * Element selection
-  * Basic DOM manipulation
-  * Events and event listeners
+## Instructions
 
-## Set Up The Project With Git
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this project.**
 
-**Follow these steps to set up and work on your project:**
+### Commits
 
-* [ ] Create a forked copy of this project.
-* [ ] Add your project manager as collaborator on Github.
-* [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
 
-**Follow these steps for completing your project.**
+## Project Set Up
 
-* [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
-* [ ] Add your project manager as a reviewer on the pull-request
-* [ ] Your project manager will count the project as complete by merging the branch back into master.
+- [ ] Create a forked copy of this project.
+- [ ] Add your team lead as collaborator on Github.
+- [ ] Clone your OWN version of the repository in your terminal
+- [ ] Use CRA to create a new React app in this repository
+- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [ ] Push commits: git push origin `<firstName-lastName>`.
 
-### Preprocessor Setup
+Follow these steps for completing your project.
 
-  * None. We have gone ahead and taken care of this step for you. Focus on the Javascript 😁.
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
+- [ ] Add your team lead as a reviewer on the pull-request
+- [ ] Your team lead will count the project as complete by merging the branch back into master.
+- [ ] Do your magic!
 
-### Part 1: Requesting Data from the GitHub API
-* Include the script element linking the `axios` library in your HTML. If you do not remember the code you can find it here: https://github.com/axios/axios
-* Follow the instructions found in the GitHubCard/index.js file to request data from the GitHub API.
+## Minimum Viable Product
 
-### Part 2: Create the component function
+- [ ] Fetch data from the Github API for a Github user
+- [ ] Display the user data on the DOM
+- [ ] Use class components when you need to hold any state or use any lifecycle methods
 
-* Once you are receiving data from the GitHub API, take some time to study the data and the information it is giving you. You will create the HTML template you see in the GitHubCard/index.js file and plugging in the dynamic data you are getting from the GitHub API.
-* Once you complete the component, create a component based on your profile and add it to the DOM.
+## Planning your App
 
-### Part 3: Your Friends
+This is an important step for any project you will be working on. You will want to plan out what data you will need, which component will manage that data via state, what functions you may need to update that state, and where you need to pass the data to render it to the DOM. I love to use pen and paper or a whiteboard for this. The visuals can help a lot when you're deep into your code. After I finish that, I will write out a list of steps that I think it will take to build the app. This gives me a starting point, and direction as I proceed. This list always changes a bit as you are building, but it should give you a good flow and some good anchor points.
 
-* After you have successfully added your own card to the DOM, we will get a list of your followers and programmatically add cards for them as well. Follow the instructions in GitHubCard/index.js. 
+Also, since you have used the Github API before, you know some of the gotchas. Make sure to plan and watch for those.
 
-### Stretch Goals:
+When you have those completed, you're ready to start coding!
 
-* Instead of manually creating a list of followers, do it programmatically. Create a function that requests the followers data from the API after it has received your data and create a card for each of your followers. Hint: you can chain promises.
+## STEP 1 - Fetch the User Data
 
-* Look into adding more info as an expanding card. You will need to create some new CSS and a button that expands and contracts the card. 
+- When your component mounts, send a GET request to the following URL (replacing the palceholder with your Github name):
+  - https://api.github.com/users/<your name>
+- After you fetch your data, set it to state
 
-* Look into adding your GitHub contribution graph. There are a number of different ways of doing this, this Stack Overflow discussion will get you started: https://stackoverflow.com/questions/34516592/embed-github-contributions-graph-in-website
+## STEP 2 - Display the User Data
 
-Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
+- Pass the data to the component that will be displaying it
+- Build out a user card using the data that the Github API returns to you
+  - You may reference your old project for this, or you may wish to build this from scratch yourself
+
+## STEP 3 - Fetch the User's Followers
+
+- When your component mounts, you will also fetch the user's followers using this endpoint:
+  https://api.github.com/users/<Your github name>/followers
+- Set that data to state as well, and display the data in your app
+
+## STEP 4 - Style the User Card
+
+- Now it's time to style up your app
+- You are free to choose how you style your app, but make it look as presentable as you can
+- Try something new here. Maybe that's a new CSS technique you haven't really practiced yet. Maybe it's using a styling library you haven't tried. Push yourself to get better in this area.
+
+## STEP 5 - Project Retrospective
+
+Now that you have completed the MVP, I want you to think about the process it took you to get here. Is there anything you wish you had planned better? Anything you would do differently? Now take a minute think about how you would accomplish these same objectives with function components and hooks. You have experience with both formats now, so you can form opinions, but more importantly, you can back up those opinions. That's a really exciting level to be at! If you have time now, go ahead and move onto the stretch problems.
+
+## Stretch Problems
+
+After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+
+- Build a form that allows you to search for different Github users. When the form is submitted, use `componentDidUpdate` to fetch the data for the user you typed in. Set that new user's data to state to trigger the component to rerender and display your new user. Don't forget to fetch their followers as well.
+
+- Look into adding your GitHub contribution graph. There are a number of different ways of doing this, this Stack Overflow discussion will get you started: https://stackoverflow.com/questions/34516592/embed-github-contributions-graph-in-website
