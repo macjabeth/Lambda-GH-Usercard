@@ -17,6 +17,16 @@
     and append the returned markup to the DOM as a child of .cards
 */
 
+const [cards] = document.getElementsByClassName('cards');
+
+axios.get('https://api.github.com/users/macjabeth')
+  .then(response => {
+    // console.log(response);
+    const card = createCard(response.data);
+    cards.append(card);
+  })
+  .catch(err => console.error(err));
+
 /*
   STEP 5: Now that you have your own card getting added to the DOM, either
     follow this link in your browser https://api.github.com/users/<Your github name>/followers,
@@ -49,6 +59,44 @@ const followersArray = [];
       </div>
     </div>
 */
+
+function createCard(data) {
+  // create elements
+  const card = document.createElement('div');
+  const img = document.createElement('img');
+  const cardInfo = document.createElement('div');
+  const name = document.createElement('h3');
+  const username = document.createElement('p');
+  const location = document.createElement('p');
+  const profile = document.createElement('p');
+  const profileLink = document.createElement('a');
+  const followers = document.createElement('p');
+  const following = document.createElement('p');
+  const bio = document.createElement('p');
+
+  // create structure
+  card.append(img, cardInfo);
+  cardInfo.append(name, username, location, profile, followers, following, bio);
+  profile.append(profileLink);
+
+  // assign attributes and data
+  card.classList.add('card');
+  img.src = data.avatar_url;
+  cardInfo.classList.add('card-info');
+  name.classList.add('name');
+  name.textContent = data.name;
+  username.classList.add('username');
+  username.textContent = data.login;
+  location.textContent = `Location: ${data.location}`;
+  profile.prepend('Profile: ');
+  profileLink.href = data.html_url;
+  profileLink.textContent = data.html_url;
+  followers.textContent = `Followers: ${data.followers}`;
+  following.textContent = `Following: ${data.following}`;
+  bio.textContent = `Bio: ${data.bio}`;
+
+  return card;
+}
 
 /*
   List of LS Instructors Github username's:
