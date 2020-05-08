@@ -19,13 +19,27 @@
 
 const [cards] = document.getElementsByClassName('cards');
 
-axios.get('https://api.github.com/users/macjabeth')
-  .then(response => {
-    // console.log(response);
-    const card = createCard(response.data);
-    cards.append(card);
-  })
-  .catch(err => console.error(err));
+function addGitHubUser(...users) {
+  const url = 'https://api.github.com/users';
+  const promises = users.map(user => axios.get(`${url}/${user}`));
+
+  Promise.all(promises).then(values => {
+    values.forEach(value => {
+      const card = createCard(value.data);
+      cards.append(card);
+    });
+  });
+}
+
+// axios.get('https://api.github.com/users/macjabeth')
+//   .then(response => {
+//     // console.log(response);
+//     const card = createCard(response.data);
+//     cards.append(card);
+//   })
+//   .catch(err => console.error(err));
+
+addGitHubUser('macjabeth');
 
 /*
   STEP 5: Now that you have your own card getting added to the DOM, either
@@ -38,7 +52,15 @@ axios.get('https://api.github.com/users/macjabeth')
     user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell'
+];
+
+addGitHubUser(...followersArray);
 
 /*
   STEP 3: Create a function that accepts a single object as its only argument.
